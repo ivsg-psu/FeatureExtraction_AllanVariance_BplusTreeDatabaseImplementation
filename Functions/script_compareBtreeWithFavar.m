@@ -143,3 +143,23 @@ axes('Position',axis_position,'XAxisLocation','top',...
      'Color','none','Fontsize',13,'Box','off');
 ax2 = gca;
 xlabel(ax2,'Correlation Time $[s]$','Interpreter','latex','FontSize',18)
+
+figure(04)
+clf
+width = 400; height = 500; right = 100; bottom = 100;
+axis_position = [20/width, 20/height, 307.32/width, 417.15/height];
+set(gcf, 'position', [right, bottom, width, height])
+hold on
+grid on
+plot(avar_wnPrw,list_of_correlation_intervals,'b','Linewidth',1.2)
+set(gca,'Position',axis_position,'XScale','log','YScale','log',...
+    'xticklabel',[],'yticklabel',[],'Fontsize',13)
+xlim([1e-4 10^0.5])
+ax1 = gca;
+axes('Position',axis_position,'XAxisLocation','top','xLim',ax1.XLim,'XScale','log',...
+    'YAxisLocation','right','yLim',ax1.YLim,'YScale','log',...
+    'Color','none','Fontsize',13,'Box','off');
+ax2 = gca;
+xlabel(ax2,'Allan Variance $[Unit^2]$','Interpreter','latex','FontSize',18)
+ylabel(ax2,'Correlation Interval $[Number \: of \: Samples]$',...
+    'Interpreter','latex','FontSize',18)
